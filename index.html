@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood & Plasma Donation & Emergency Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white">
+
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-md fixed w-full z-20 top-0">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="index.html" class="text-red-500 font-bold text-2xl">BloodFinder</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="index.html" class="text-gray-700 hover:text-red-500">HOME</a>
+                <a href="donor.html" class="text-gray-700 hover:text-red-500">DONOR REGISTRATION</a>
+                <a href="search.html" class="text-gray-700 hover:text-red-500">SEARCH A DONOR</a>
+                <a href="admin.html" class="text-gray-700 hover:text-red-500">LOGIN</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white p-4">
+            <a href="index.html" class="block text-gray-700 hover:text-red-500 py-2">HOME</a>
+            <a href="donor.html" class="block text-gray-700 hover:text-red-500 py-2">DONOR REGISTRATION</a>
+            <a href="search.html" class="block text-gray-700 hover:text-red-500 py-2">SEARCH A DONOR</a>
+            <a href="admin.html" class="block text-gray-700 hover:text-red-500 py-2">LOGIN</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1524721696987-b9527df9e512?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+            <div class="absolute inset-0 bg-white/50"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-2xl text-left">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight animate-fade-in-down">Donate Blood, Save a Life.</h1>
+                <p class="text-lg text-gray-700 mt-4 animate-fade-in-up">Your small contribution can make a huge impact. Join our community of heroes and help us make a difference. Every drop counts.</p>
+                <div class="mt-8 space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+                    <a href="donor.html" class="inline-block bg-red-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-600 transition transform hover:scale-105 shadow-lg">Be a Donor</a>
+                    <a href="search.html" class="inline-block bg-gray-100 text-gray-800 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition transform hover:scale-105 shadow-lg">Search Donors</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Awareness Section -->
+    <section class="bg-white py-20">
+        <div class="container mx-auto text-center px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Why Donate Blood?</h2>
+            <p class="text-gray-600 mb-12 max-w-2xl mx-auto">Learn more about the importance of blood donation and how you can contribute to this life-saving cause.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Fact Card 1 -->
+                <div class="card bg-gray-50 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-red-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Save Multiple Lives</h3>
+                    <p class="text-gray-600 mt-2">A single donation can save up to three lives. Your blood is separated into components, helping multiple patients.</p>
+                </div>
+                <!-- Fact Card 2 -->
+                <div class="card bg-gray-50 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-red-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Constant Need</h3>
+                    <p class="text-gray-600 mt-2">Someone needs blood every two seconds. Your regular donation ensures a stable supply for emergencies.</p>
+                </div>
+                <!-- Fact Card 3 -->
+                <div class="card bg-gray-50 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-red-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">A Gift of Life</h3>
+                    <p class="text-gray-600 mt-2">Blood cannot be manufactured. It can only come from generous donors like you. It's a priceless gift.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quotes Section -->
+    <section class="bg-gray-100 py-20">
+        <div class="container mx-auto text-center px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-10">Words of Inspiration</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="p-8 bg-white rounded-xl shadow-lg">
+                    <p class="text-xl italic text-gray-700">"The blood you donate is a lifeline in someone’s dark hour. You are not just a donor, you are a savior."</p>
+                    <p class="mt-4 font-semibold text-gray-800">- Anonymous Hero</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 BloodFinder. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+/* Custom styles for the availability toggle */
+#availability:checked + div .dot {
+    transform: translateX(100%);
+    background-color: #EF4444; /* red-500 */
+}
+#availability:checked + div {
+    background-color: #F87171; /* red-400 */
+}
+
+/* Glass UI */
+.glass-ui {
+    background: rgba(255, 255, 255, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+    opacity: 0; /* Start hidden */
+}
+
+.card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Table row animation */
+.result-row {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}

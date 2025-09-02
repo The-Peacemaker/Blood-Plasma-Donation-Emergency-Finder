@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Donors - Blood & Plasma Donation & Emergency Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white">
+
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-md fixed w-full z-20 top-0">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="index.html" class="text-red-500 font-bold text-2xl">BloodFinder</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="index.html" class="text-gray-700 hover:text-red-500">HOME</a>
+                <a href="donor.html" class="text-gray-700 hover:text-red-500">DONOR REGISTRATION</a>
+                <a href="search.html" class="text-gray-700 hover:text-red-500">SEARCH A DONOR</a>
+                <a href="admin.html" class="text-gray-700 hover:text-red-500">LOGIN</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/80 backdrop-blur-md p-4">
+            <a href="index.html" class="block text-gray-700 hover:text-red-500 py-2">HOME</a>
+            <a href="donor.html" class="block text-gray-700 hover:text-red-500 py-2">DONOR REGISTRATION</a>
+            <a href="search.html" class="block text-gray-700 hover:text-red-500 py-2">SEARCH A DONOR</a>
+            <a href="admin.html" class="block text-gray-700 hover:text-red-500 py-2">LOGIN</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-24 px-4">
+        <!-- Search Form -->
+        <section id="search-form-section" class="max-w-2xl mx-auto">
+            <form id="search-form" class="glass-ui p-8 rounded-xl shadow-lg">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Find a Blood Donor</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="search-city" class="block text-gray-700 font-semibold mb-2">Select City</label>
+                        <select id="search-city" class="w-full px-3 py-2 border rounded-lg bg-white/50 focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <optgroup label="Andhra Pradesh">
+                                <option>Visakhapatnam</option>
+                                <option>Vijayawada</option>
+                                <option>Guntur</option>
+                                <option>Nellore</option>
+                                <option>Kurnool</option>
+                                <option>Rajahmundry</option>
+                            </optgroup>
+                            <optgroup label="Arunachal Pradesh">
+                                <option>Itanagar</option>
+                                <option>Tawang</option>
+                                <option>Ziro</option>
+                                <option>Bomdila</option>
+                                <option>Pasighat</option>
+                                <option>Anini</option>
+                            </optgroup>
+                            <optgroup label="Assam">
+                                <option>Guwahati</option>
+                                <option>Dibrugarh</option>
+                                <option>Silchar</option>
+                                <option>Jorhat</option>
+                                <option>Nagaon</option>
+                                <option>Tinsukia</option>
+                            </optgroup>
+                            <optgroup label="Bihar">
+                                <option>Patna</option>
+                                <option>Gaya</option>
+                                <option>Bhagalpur</option>
+                                <option>Muzaffarpur</option>
+                                <option>Purnia</option>
+                                <option>Darbhanga</option>
+                            </optgroup>
+                            <optgroup label="Chhattisgarh">
+                                <option>Raipur</option>
+                                <option>Bhilai</option>
+                                <option>Bilaspur</option>
+                                <option>Korba</option>
+                                <option>Durg</option>
+                                <option>Raigarh</option>
+                            </optgroup>
+                            <optgroup label="Goa">
+                                <option>Panaji</option>
+                                <option>Margao</option>
+                                <option>Vasco da Gama</option>
+                                <option>Mapusa</option>
+                                <option>Ponda</option>
+                                <option>Bicholim</option>
+                            </optgroup>
+                            <optgroup label="Gujarat">
+                                <option>Ahmedabad</option>
+                                <option>Surat</option>
+                                <option>Vadodara</option>
+                                <option>Rajkot</option>
+                                <option>Bhavnagar</option>
+                                <option>Jamnagar</option>
+                            </optgroup>
+                            <optgroup label="Haryana">
+                                <option>Faridabad</option>
+                                <option>Gurgaon</option>
+                                <option>Panipat</option>
+                                <option>Ambala</option>
+                                <option>Yamunanagar</option>
+                                <option>Rohtak</option>
+                            </optgroup>
+                            <optgroup label="Himachal Pradesh">
+                                <option>Shimla</option>
+                                <option>Manali</option>
+                                <option>Dharamshala</option>
+                                <option>Solan</option>
+                                <option>Mandi</option>
+                                <option>Kullu</option>
+                            </optgroup>
+                            <optgroup label="Jharkhand">
+                                <option>Ranchi</option>
+                                <option>Jamshedpur</option>
+                                <option>Dhanbad</option>
+                                <option>Bokaro Steel City</option>
+                                <option>Deoghar</option>
+                                <option>Hazaribagh</option>
+                            </optgroup>
+                            <optgroup label="Karnataka">
+                                <option>Bengaluru</option>
+                                <option>Mysuru</option>
+                                <option>Hubballi-Dharwad</option>
+                                <option>Mangaluru</option>
+                                <option>Belagavi</option>
+                                <option>Shivamogga</option>
+                            </optgroup>
+                            <optgroup label="Kerala">
+                                <option>Thiruvananthapuram</option>
+                                <option>Kochi</option>
+                                <option>Kozhikode</option>
+                                <option>Thrissur</option>
+                                <option>Kollam</option>
+                                <option>Alappuzha</option>
+                                <option>Palakkad</option>
+                                <option>Malappuram</option>
+                                <option>Kannur</option>
+                                <option>Kottayam</option>
+                                <option>Pathanamthitta</option>
+                                <option>Idukki</option>
+                                <option>Wayanad</option>
+                                <option>Kasaragod</option>
+                                <option>Tiruvalla</option>
+                                <option>Changanassery</option>
+                                <option>Perumbavoor</option>
+                                <option>Varkala</option>
+                                <option>Attingal</option>
+                            </optgroup>
+                            <optgroup label="Madhya Pradesh">
+                                <option>Indore</option>
+                                <option>Bhopal</option>
+                                <option>Jabalpur</option>
+                                <option>Gwalior</option>
+                                <option>Ujjain</option>
+                                <option>Sagar</option>
+                            </optgroup>
+                            <optgroup label="Maharashtra">
+                                <option>Mumbai</option>
+                                <option>Pune</option>
+                                <option>Nagpur</option>
+                                <option>Nashik</option>
+                                <option>Aurangabad</option>
+                                <option>Solapur</option>
+                            </optgroup>
+                            <optgroup label="Manipur">
+                                <option>Imphal</option>
+                                <option>Churachandpur</option>
+                                <option>Thoubal</option>
+                                <option>Ukhrul</option>
+                                <option>Senapati</option>
+                                <option>Tamenglong</option>
+                            </optgroup>
+                            <optgroup label="Meghalaya">
+                                <option>Shillong</option>
+                                <option>Tura</option>
+                                <option>Jowai</option>
+                                <option>Nongpoh</option>
+                                <option>Williamnagar</option>
+                                <option>Baghmara</option>
+                            </optgroup>
+                            <optgroup label="Mizoram">
+                                <option>Aizawl</option>
+                                <option>Lunglei</option>
+                                <option>Champhai</option>
+                                <option>Serchhip</option>
+                                <option>Kolasib</option>
+                                <option>Lawngtlai</option>
+                            </optgroup>
+                            <optgroup label="Nagaland">
+                                <option>Kohima</option>
+                                <option>Dimapur</option>
+                                <option>Mokokchung</option>
+                                <option>Tuensang</option>
+                                <option>Wokha</option>
+                                <option>Zunheboto</option>
+                            </optgroup>
+                            <optgroup label="Odisha">
+                                <option>Bhubaneswar</option>
+                                <option>Cuttack</option>
+                                <option>Rourkela</option>
+                                <option>Puri</option>
+                                <option>Sambalpur</option>
+                                <option>Berhampur</option>
+                            </optgroup>
+                            <optgroup label="Punjab">
+                                <option>Ludhiana</option>
+                                <option>Amritsar</option>
+                                <option>Jalandhar</option>
+                                <option>Patiala</option>
+                                <option>Bathinda</option>
+                                <option>Mohali</option>
+                            </optgroup>
+                            <optgroup label="Rajasthan">
+                                <option>Jaipur</option>
+                                <option>Jodhpur</option>
+                                <option>Udaipur</option>
+                                <option>Kota</option>
+                                <option>Bikaner</option>
+                                <option>Ajmer</option>
+                            </optgroup>
+                            <optgroup label="Sikkim">
+                                <option>Gangtok</option>
+                                <option>Namchi</option>
+                                <option>Mangan</option>
+                                <option>Gyalshing</option>
+                                <option>Pelling</option>
+                                <option>Lachung</option>
+                            </optgroup>
+                            <optgroup label="Tamil Nadu">
+                                <option>Chennai</option>
+                                <option>Coimbatore</option>
+                                <option>Madurai</option>
+                                <option>Tiruchirappalli</option>
+                                <option>Salem</option>
+                                <option>Tirunelveli</option>
+                            </optgroup>
+                            <optgroup label="Telangana">
+                                <option>Hyderabad</option>
+                                <option>Warangal</option>
+                                <option>Nizamabad</option>
+                                <option>Karimnagar</option>
+                                <option>Ramagundam</option>
+                                <option>Khammam</option>
+                            </optgroup>
+                            <optgroup label="Tripura">
+                                <option>Agartala</option>
+                                <option>Udaipur</option>
+                                <option>Dharmanagar</option>
+                                <option>Kailasahar</option>
+                                <option>Belonia</option>
+                                <option>Khowai</option>
+                            </optgroup>
+                            <optgroup label="Uttar Pradesh">
+                                <option>Lucknow</option>
+                                <option>Kanpur</option>
+                                <option>Ghaziabad</option>
+                                <option>Agra</option>
+                                <option>Varanasi</option>
+                                <option>Meerut</option>
+                            </optgroup>
+                            <optgroup label="Uttarakhand">
+                                <option>Dehradun</option>
+                                <option>Haridwar</option>
+                                <option>Roorkee</option>
+                                <option>Haldwani</option>
+                                <option>Rishikesh</option>
+                                <option>Kashipur</option>
+                            </optgroup>
+                            <optgroup label="West Bengal">
+                                <option>Kolkata</option>
+                                <option>Howrah</option>
+                                <option>Durgapur</option>
+                                <option>Asansol</option>
+                                <option>Siliguri</option>
+                                <option>Darjeeling</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="search-blood-group" class="block text-gray-700 font-semibold mb-2">Select Blood Group</label>
+                        <select id="search-blood-group" class="w-full px-3 py-2 border rounded-lg bg-white/50 focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option>ALL</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="w-full mt-8 bg-red-500 text-white py-3 rounded-lg font-semibold hover:bg-red-600 transition transform hover:scale-105 shadow-md">Search</button>
+            </form>
+        </section>
+
+        <!-- Search Results -->
+        <section id="search-results-section" class="mt-12">
+            <div id="donor-results-container" class="glass-ui p-8 rounded-xl shadow-lg hidden">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Available Donors</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white/50 rounded-lg">
+                        <thead>
+                            <tr class="border-b-2 border-gray-300">
+                                <th class="p-4 text-left font-semibold text-gray-700">Donor Name</th>
+                                <th class="p-4 text-left font-semibold text-gray-700">Blood Group</th>
+                                <th class="p-4 text-left font-semibold text-gray-700">Location</th>
+                                <th class="p-4 text-left font-semibold text-gray-700">Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody id="donor-results-tbody">
+                            <!-- Rows will be injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="no-results-message" class="hidden text-center text-gray-600 mt-8 p-8 glass-ui rounded-xl">
+                <p class="text-xl">No donors found for your criteria.</p>
+                <p class="mt-2">You can create an emergency request for your requirement.</p>
+            </div>
+        </section>
+
+        <!-- Emergency Request Form -->
+        <section id="emergency-request-section" class="hidden max-w-2xl mx-auto mt-10">
+            <form id="emergency-form" class="glass-ui p-8 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Create Emergency Request</h2>
+                <div class="mb-4">
+                    <label for="patient-name" class="block text-gray-700">Patient Name</label>
+                    <input type="text" id="patient-name" class="w-full px-3 py-2 border rounded-lg bg-white/50 focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                </div>
+                <div class="mb-4">
+                    <label for="hospital-name" class="block text-gray-700">Hospital Name</label>
+                    <input type="text" id="hospital-name" class="w-full px-3 py-2 border rounded-lg bg-white/50 focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="mb-4">
+                        <label for="request-blood-group" class="block text-gray-700">Blood Group</label>
+                        <select id="request-blood-group" class="w-full px-3 py-2 border rounded-lg bg-white/50 focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="units-required" class="block text-gray-700">Units Required</label>
+                        <input type="number" id="units-required" class="w-full px-3 py-2 border rounded-lg bg-white/50 focus:outline-none focus:ring-2 focus:ring-red-500" min="1" required>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="urgency-level" class="block text-gray-700">Urgency</label>
+                    <select id="urgency-level" class="w-full px-3 py-2 border rounded-lg bg-white/50 focus:outline-none focus:ring-2 focus:ring-red-500">
+                        <option>High</option>
+                        <option>Medium</option>
+                        <option>Low</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600">Submit Request</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg hidden">
+        Emergency request submitted successfully!
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-10">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 BloodFinder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
