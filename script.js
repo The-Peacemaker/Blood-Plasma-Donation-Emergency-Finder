@@ -201,3 +201,21 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 });
+
+document.getElementById("register-form").addEventListener("submit", function(e) {
+    let dobInput = document.getElementById("register-dob").value;
+    if (dobInput) {
+        let dob = new Date(dobInput);
+        let today = new Date();
+        let age = today.getFullYear() - dob.getFullYear();
+        let m = today.getMonth() - dob.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+            age--;
+        }
+
+        if (age <= 18) {
+            alert("Donor must be at least 18 years old.");
+            e.preventDefault();
+        }
+    }
+});

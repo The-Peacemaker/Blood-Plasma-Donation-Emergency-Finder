@@ -7,16 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white">
-
+<body class="flex flex-col min-h-screen bg-white">
     <!-- Navbar -->
     <nav class="bg-gray-100 p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="text-red-500 font-bold text-xl">BloodFinder</a>
             <div class="hidden md:flex space-x-4">
                 <a href="index.html" class="text-gray-700 hover:text-red-500">HOME</a>
-                <a href="donor.html" class="text-gray-700 hover:text-red-500">DONOR REGISTRATION</a>
-                <a href="search.html" class="text-gray-700 hover:text-red-500">SEARCH A DONOR</a>
                 <a href="admin.html" class="text-gray-700 hover:text-red-500">LOGIN</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-gray-700">
@@ -27,14 +24,12 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden p-4">
             <a href="index.html" class="block text-gray-700 hover:text-red-500 py-2">HOME</a>
-            <a href="donor.html" class="block text-gray-700 hover:text-red-500 py-2">DONOR REGISTRATION</a>
-            <a href="search.html" class="block text-gray-700 hover:text-red-500 py-2">SEARCH A DONOR</a>
             <a href="admin.html" class="block text-gray-700 hover:text-red-500 py-2">LOGIN</a>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="container mx-auto py-10">
+    <main class="flex-grow container mx-auto py-10">
         <!-- Login/Register Section -->
         <section id="auth-section" class="max-w-md mx-auto">
             <div class="bg-white p-8 rounded-lg shadow-md">
@@ -70,6 +65,29 @@
                         <label for="register-password" class="block text-gray-700">Password</label>
                         <input type="password" id="register-password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
                     </div>
+                    <div class="mb-4">
+                        <label for="register-mobile" class="block text-gray-700">Mobile Number</label>
+                        <input type="tel" id="register-mobile" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                        pattern="[0-9]{10}" placeholder="Enter 10-digit number" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="register-city" class="block text-gray-700">City</label>
+                        <input type="text" id="register-city" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="register-area" class="block text-gray-700">Area</label>
+                        <input type="text" id="register-area" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="register-dob" class="block text-gray-700">Date of Birth</label>
+                        <input type="date" id="register-dob" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="register-weight" class="block text-gray-700">Weight (kg)</label>
+                        <input type="number" id="register-weight" min="50" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                        placeholder="Enter weight in kg" required>
+                    </div>
+
                     <div class="mb-4">
                         <label for="register-blood-group" class="block text-gray-700">Blood Group</label>
                         <select id="register-blood-group" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
