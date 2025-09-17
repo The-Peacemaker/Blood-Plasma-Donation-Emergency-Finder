@@ -1,7 +1,8 @@
 // BloodFinder API Client
 class BloodFinderAPI {
     constructor() {
-        this.baseURL = 'http://localhost:5000/api';
+        // Use environment-aware configuration
+        this.baseURL = window.API_CONFIG ? window.API_CONFIG.getBaseURL() : 'http://localhost:5000/api';
         this.token = localStorage.getItem('bloodfinder_token');
     }
 

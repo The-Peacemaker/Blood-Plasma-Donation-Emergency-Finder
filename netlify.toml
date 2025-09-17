@@ -1,0 +1,43 @@
+[build]
+  # Build command (if needed)
+  command = "echo 'No build step needed for static files'"
+  
+  # Directory to publish
+  publish = "."
+  
+  # Functions directory (for backend API)
+  functions = "netlify/functions"
+
+[build.environment]
+  # Environment variables for build process
+  NODE_VERSION = "18"
+
+# Headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Headers for API responses
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
+
+# Redirect configuration
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Force HTTPS
+[[redirects]]
+  from = "http://yoursite.netlify.app/*"
+  to = "https://yoursite.netlify.app/:splat"
+  status = 301
+  force = true

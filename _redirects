@@ -1,0 +1,11 @@
+# Netlify redirects file for SPA routing
+# Handle client-side routing
+/*    /index.html   200
+
+# API proxy to backend (if using Netlify Functions)
+/api/*  /.netlify/functions/:splat  200
+
+# Handle specific pages
+/donor    /donor.html    200
+/admin    /admin.html    200
+/search   /search.html   200
